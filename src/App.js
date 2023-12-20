@@ -1,31 +1,59 @@
-
-import { Link, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Home from './components/Home'
-import Group from './components/Group';
-import Group2 from './components/Group2';
+import { useState } from "react";
 
 function App() {
+
+  const [value , setValue] = useState(0);
+  const [valuePln , setValuePln] = useState(0);
+  const [valueUsd , setValueUsd] = useState(0);
+  const [valueEur , setValueEur] = useState(0);
+  const [valueGb , setValueGb] = useState(0);
+
+  console.log(value)
+
+  const handleOnChange = (e) => {
+
+    const valueInput = e.target.value
+    console.log(valueInput)
+    setValue(valueInput)
+    setValuePln(valueInput*1)
+    setValueEur(valueInput*0.432)
+    setValueGb(valueInput*0.512)
+    setValueUsd(valueInput*0.390)
+    
+
+  }
   return (
-<>
+  <>
+    <div className="container">
+
+      <h1>Exchange Cantor</h1>
+
+      <div className="input-container">
+        <input placeholder="value" onChange={handleOnChange}></input>
+      </div>
+
+      <div className="select-value">
+        <select>
+          <option value={0}>EUR</option>
+          <option value={1}>PLN</option>
+          <option value={2}>USD</option>
+          <option value={3}>GB</option>
+        </select>
+      </div>
+
+      <div className="change-container">
+        <p>Your salary : {value}</p>
+        <p>your salry in PLN : {valuePln}</p>
+        <p>your salry in USD : {valueUsd}</p>
+        <p>your salry in EUR : {valueEur}</p>
+        <p>your salry in GB : {valueGb}</p>
+
+      </div>
 
 
-<ul>
-  <li><Link to="/"> Home</Link></li>
-  <li><Link to="/group1"> Group1</Link></li>
-  <li><Link to="/group2"> Group2</Link></li>
-  
-</ul>
-
-
-    <Routes>
-      <Route path='/' element={<Home></Home>} />
-      <Route path='/group1' element={<Group></Group>} />
-      <Route path='/group2' element={<Group2></Group2>} />
-
+    </div>
     
-    </Routes>
-    
+ 
   </>
   );
 }
