@@ -12,6 +12,9 @@ function App() {
 
   const handleOnChange = (e) => {
 
+    const selectedValue = document.getElementById('selectedMoney')
+    console.log(selectedValue.options[selectedValue.index])
+
     const valueInput = e.target.value
     console.log(valueInput)
     setValue(valueInput)
@@ -22,6 +25,10 @@ function App() {
     
 
   }
+
+ 
+
+
   return (
   <>
     <div className="container">
@@ -32,12 +39,12 @@ function App() {
         <input placeholder="value" onChange={handleOnChange}></input>
       </div>
 
-      <div className="select-value">
+      <div className="select-value" id="selectedMoney">
         <select>
-          <option value={0}>EUR</option>
+          <option value={4.5}>EUR</option>
           <option value={1}>PLN</option>
-          <option value={2}>USD</option>
-          <option value={3}>GB</option>
+          <option value={3.9}>USD</option>
+          <option value={5.1}>GB</option>
         </select>
       </div>
 
