@@ -13,15 +13,33 @@ function App() {
   const handleOnChange = (e) => {
 
     const selectedValue = document.getElementById('selectedMoney')
-    console.log(selectedValue.options[selectedValue.index])
+    console.log(selectedValue)
+    let vv = selectedValue.value
+    console.log(vv)
 
     const valueInput = e.target.value
     console.log(valueInput)
     setValue(valueInput)
-    setValuePln(valueInput*1)
-    setValueEur(valueInput*0.432)
-    setValueGb(valueInput*0.512)
-    setValueUsd(valueInput*0.390)
+    setValuePln(valueInput*vv)
+    setValueEur(valueInput*vv)
+    setValueGb(valueInput*0.512/vv)
+    setValueUsd(valueInput*0.390/vv)
+
+    if(vv === 0.45){
+      setValuePln(valueInput*vv[0],value)
+      setValueEur(valueInput*1)
+      setValueGb(valueInput*vv)
+      setValueUsd(valueInput*vv)
+
+    }
+
+    if(vv === 3.9){
+      setValuePln(valueInput*3.9/vv[1].value)
+      setValueEur(valueInput*3.9/vv[0].value)
+      setValueGb(vv[2].value/valueInput)
+      setValueUsd(valueInput*10)
+
+    }
     
 
   }
@@ -39,12 +57,12 @@ function App() {
         <input placeholder="value" onChange={handleOnChange}></input>
       </div>
 
-      <div className="select-value" id="selectedMoney">
-        <select>
-          <option value={4.5}>EUR</option>
-          <option value={1}>PLN</option>
-          <option value={3.9}>USD</option>
-          <option value={5.1}>GB</option>
+      <div className="select-value" >
+        <select id="selectedMoney">
+          <option value={0.45}>EUR</option>
+          <option value={0.1}>PLN</option>
+          <option value={0.39}>USD</option>
+          <option value={0.51}>GB</option>
         </select>
       </div>
 
