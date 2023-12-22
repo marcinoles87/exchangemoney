@@ -10,63 +10,40 @@ function App() {
   const [vv , setVV] = useState()
 
 
-  useEffect( () => {
+ const handeSelect = () => {
+  setVV( () => {
     const selectedValue = document.getElementById('selectedMoney')
-    console.log(selectedValue)
     let vv = selectedValue.value
-  }, [])
+    return vv
+  }
+  )
+ }
   
 
   const handleOnChange = (e) => {
 
-    setVV(vv)
-
     const valueInput = e.target.value
-    console.log(valueInput)
 
-    console.log(valueEur)
-    console.log(valuePln)
-    console.log(valueUsd)
-    console.log(valueGbp)
+    setValue(valueInput)
 
-    if( vv===1)
+    console.log(vv)
+
+    if(vv === 1){
     console.log('euro')
     setValuePln(valueInput*4.5)
-    setValueEur(valueInput)
+    setValueEur(valueInput*1)
     setValueGbp(valueInput*0.87)
     setValueUsd(valueInput*1.10)
+    }
 
     if(vv === 2){
-     
+     console.log('pln')
       setValuePln(valueInput)
       setValueEur(valueInput*4.5)
       setValueGbp(valueInput*3.9)
       setValueUsd(valueInput*3.94)
 
     }
-
-    if(vv === 3){
-      console.log('pln')
-      setValue(valueInput)
-      setValuePln(valueInput*3.9/vv[1].value)
-      setValueEur(valueInput*3.9/vv[0].value)
-      setValueGbp(vv[2].value/valueInput)
-      setValueUsd(valueInput*10)
-
-    }
-
-    if(vv === 4){
-    
-      setValue(valueInput)
-      setValuePln(valueInput*3.9/vv[1].value)
-      setValueEur(valueInput*3.9/vv[0].value)
-      setValueGbp(vv[2].value/valueInput)
-      setValueUsd(valueInput*10)
-
-    }
-
-
-    
 
   }
 
@@ -83,9 +60,9 @@ function App() {
         <input placeholder="value" onChange={handleOnChange}></input>
       </div>
 
-      <div className="select-value" >
+      <div className="select-value" onChange={handeSelect}>
         <select id="selectedMoney">
-          <option selected value={1}>EUR</option>
+          <option value={1}>EUR</option>
           <option value={2}>PLN</option>
           <option value={3}>USD</option>
           <option value={4}>GB</option>
