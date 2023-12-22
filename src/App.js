@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
 
@@ -7,44 +7,65 @@ function App() {
   const [valueUsd , setValueUsd] = useState(0);
   const [valueEur , setValueEur] = useState(0);
   const [valueGbp , setValueGbp] = useState(0);
+  const [vv , setVV] = useState()
 
-  console.log(value)
 
-  const handleOnChange = (e) => {
-
+  useEffect( () => {
     const selectedValue = document.getElementById('selectedMoney')
     console.log(selectedValue)
     let vv = selectedValue.value
-    console.log(vv)
+  }, [])
+  
+
+  const handleOnChange = (e) => {
+
+    setVV(vv)
 
     const valueInput = e.target.value
     console.log(valueInput)
 
-    if( vv === 0.45)
-    setValue(valueInput)
-    setValuePln(valueInput*vv*10)
+    console.log(valueEur)
+    console.log(valuePln)
+    console.log(valueUsd)
+    console.log(valueGbp)
+
+    if( vv===1)
+    console.log('euro')
+    setValuePln(valueInput*4.5)
     setValueEur(valueInput)
     setValueGbp(valueInput*0.87)
     setValueUsd(valueInput*1.10)
 
-    if(vv === 0.45){
-      console.log('euro')
-      setValuePln(valueInput*vv*10)
-      setValueEur(valueInput*1)
-      setValueGbp(valueInput*vv)
-      setValueUsd(valueInput*vv)
+    if(vv === 2){
+     
+      setValuePln(valueInput)
+      setValueEur(valueInput*4.5)
+      setValueGbp(valueInput*3.9)
+      setValueUsd(valueInput*3.94)
 
     }
 
-    if(vv === 3.9){
-      console.log('usd')
-
+    if(vv === 3){
+      console.log('pln')
+      setValue(valueInput)
       setValuePln(valueInput*3.9/vv[1].value)
       setValueEur(valueInput*3.9/vv[0].value)
       setValueGbp(vv[2].value/valueInput)
       setValueUsd(valueInput*10)
 
     }
+
+    if(vv === 4){
+    
+      setValue(valueInput)
+      setValuePln(valueInput*3.9/vv[1].value)
+      setValueEur(valueInput*3.9/vv[0].value)
+      setValueGbp(vv[2].value/valueInput)
+      setValueUsd(valueInput*10)
+
+    }
+
+
     
 
   }
@@ -64,10 +85,10 @@ function App() {
 
       <div className="select-value" >
         <select id="selectedMoney">
-          <option selected value={0.45}>EUR</option>
-          <option value={0.1}>PLN</option>
-          <option value={0.39}>USD</option>
-          <option value={0.51}>GB</option>
+          <option selected value={1}>EUR</option>
+          <option value={2}>PLN</option>
+          <option value={3}>USD</option>
+          <option value={4}>GB</option>
         </select>
       </div>
 
