@@ -6,7 +6,7 @@ function App() {
   const [valuePln , setValuePln] = useState(0);
   const [valueUsd , setValueUsd] = useState(0);
   const [valueEur , setValueEur] = useState(0);
-  const [valueGb , setValueGb] = useState(0);
+  const [valueGbp , setValueGbp] = useState(0);
 
   console.log(value)
 
@@ -19,24 +19,29 @@ function App() {
 
     const valueInput = e.target.value
     console.log(valueInput)
+
+    if( vv === 0.45)
     setValue(valueInput)
-    setValuePln(valueInput*vv)
-    setValueEur(valueInput*vv)
-    setValueGb(valueInput*0.512/vv)
-    setValueUsd(valueInput*0.390/vv)
+    setValuePln(valueInput*vv*10)
+    setValueEur(valueInput)
+    setValueGbp(valueInput*0.87)
+    setValueUsd(valueInput*1.10)
 
     if(vv === 0.45){
-      setValuePln(valueInput*vv[0],value)
+      console.log('euro')
+      setValuePln(valueInput*vv*10)
       setValueEur(valueInput*1)
-      setValueGb(valueInput*vv)
+      setValueGbp(valueInput*vv)
       setValueUsd(valueInput*vv)
 
     }
 
     if(vv === 3.9){
+      console.log('usd')
+
       setValuePln(valueInput*3.9/vv[1].value)
       setValueEur(valueInput*3.9/vv[0].value)
-      setValueGb(vv[2].value/valueInput)
+      setValueGbp(vv[2].value/valueInput)
       setValueUsd(valueInput*10)
 
     }
@@ -59,7 +64,7 @@ function App() {
 
       <div className="select-value" >
         <select id="selectedMoney">
-          <option value={0.45}>EUR</option>
+          <option selected value={0.45}>EUR</option>
           <option value={0.1}>PLN</option>
           <option value={0.39}>USD</option>
           <option value={0.51}>GB</option>
@@ -71,7 +76,7 @@ function App() {
         <p>your salry in PLN : {valuePln}</p>
         <p>your salry in USD : {valueUsd}</p>
         <p>your salry in EUR : {valueEur}</p>
-        <p>your salry in GB : {valueGb}</p>
+        <p>your salry in GB : {valueGbp}</p>
 
       </div>
 
