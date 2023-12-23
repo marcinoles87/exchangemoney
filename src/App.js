@@ -4,29 +4,20 @@ function App() {
 
   const [value , setValue] = useState(0);
   const [valuePln , setValuePln] = useState(0);
-  const [valueUsd , setValueUsd] = useState(0);
   const [valueEur , setValueEur] = useState(0);
-  const [valueGbp , setValueGbp] = useState(0);
-  const [vv , setVV] = useState()
-
 
 
   const handleOnChange = (e) => {
 
-    const selectedValue = document.getElementById('selectedMoney')
-    setVV(selectedValue.value)
-    
+    const moneySelected = document.getElementById('selectedMoney');
+    const cashSelected = moneySelected.value;
 
-    const valueInput = e.target.value
-    console.log(vv)
+    let salary = e.target.value
+    console.log(salary)
 
-    setValue(valueInput)
-    setValuePln(value)
-    setValueUsd(value*vv)
-    setValueEur(value*vv)
-    setValueGbp(value*vv)
+    setValuePln(salary * cashSelected)
+    setValueEur(salary * cashSelected)
     
-  
   }
 
  
@@ -51,14 +42,15 @@ function App() {
         </select>
       </div>
 
+
       <div className="change-container">
         <p>Your salary : {value}</p>
         <p>your salry in PLN : {valuePln}</p>
-        <p>your salry in USD : {valueUsd}</p>
         <p>your salry in EUR : {valueEur}</p>
-        <p>your salry in GB : {valueGbp}</p>
-
+       
       </div>
+
+      <button>Change Money</button>
 
 
     </div>
