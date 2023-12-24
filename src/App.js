@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './App.css'
 
 function App() {
 
@@ -75,9 +76,19 @@ function App() {
 
       <div className="change-container">
         <p>Your salary : {value}</p>
-        <p>your salry in PLN : {valuePln}</p>
-        <p>your salry in EUR : {valueEur}</p>
-        <p>your salry in Usd : {valueUsd}</p>
+        <div className="money-container">
+          <p>Your salry in Pln : {valuePln}</p>
+        </div>
+        
+        <div className="money-container">
+          <p>Your salry in Eur : {valueEur}</p>
+        </div>
+
+        <div className="money-container">
+          <p>Your salry in Usd : {valueUsd}</p>
+        </div>
+        
+       
        
       </div>
 
