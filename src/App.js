@@ -49,6 +49,9 @@ function App() {
     const inputField = document.querySelector('input');
     console.log(inputField);
     inputField.value = '';
+    setValueEur(0);
+    setValuePln(0);
+    setValueUsd(0);
   }
 
  
@@ -92,7 +95,7 @@ function App() {
        
       </div>
 
-      <button>Change Money</button>
+      
 
 
     </div>
