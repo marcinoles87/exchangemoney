@@ -32,6 +32,13 @@ function App() {
       setValueUsd(salary * 0.25)
     }
 
+    if(cashSelected >= 2 && cashSelected < 4){
+      console.log('usd')
+      setValueEur( salary * 0.907)
+      setValuePln( salary * 3.93)
+      setValueUsd( salary)
+    }
+
     
     
   }
