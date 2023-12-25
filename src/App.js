@@ -49,6 +49,7 @@ function App() {
     const inputField = document.querySelector('input');
     console.log(inputField);
     inputField.value = '';
+    setValue(0);
     setValueEur(0);
     setValuePln(0);
     setValueUsd(0);
@@ -59,7 +60,7 @@ function App() {
 
   return (
   <>
-    <div className="container">
+    <div className="exchange-container">
 
       <h1>Exchange Cantor</h1>
 

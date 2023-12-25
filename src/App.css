@@ -1,8 +1,28 @@
+.exchange-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: fit-content;
+}
+
 .change-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
    
+}
+
+.select-value{
+    margin-top: 10px;
+    
+}
+
+select{
+    background-color: rgb(170, 177, 28);
 }
 
 .money-container{
@@ -16,4 +36,5 @@
     background-color: rgb(1, 6, 142);
     border: 1px solid black;
     box-shadow: 2px 5px 2px rgb(183, 182, 182);
+    text-align: left;
 }
