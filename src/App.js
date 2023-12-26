@@ -24,7 +24,7 @@ function App() {
 
     if(cashSelected >= 4.5){
       console.log('eur')
-      setValuePln(salary * 4.32)
+      setValuePln(salary * 4.32)  
       setValueUsd(salary * 1.1010)
     }
 
