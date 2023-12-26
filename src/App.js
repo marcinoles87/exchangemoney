@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ReactCountryFlag from "react-country-flag";
 import './App.css'
 
 function App() {
@@ -81,15 +82,15 @@ function App() {
       <div className="change-container">
         <p>Your salary : {value}</p>
         <div className="money-container">
-          <p>Your salry in Pln : {valuePln}</p>
+          <p><ReactCountryFlag countryCode="PL" svg style={{width:'2em'}}/> Your salary in Pln : {valuePln} </p>
         </div>
         
         <div className="money-container">
-          <p>Your salry in Eur : {valueEur}</p>
+          <p><ReactCountryFlag countryCode="EU" svg style={{width:'2em'}}/> Your salary in Eur : {valueEur} </p>
         </div>
 
         <div className="money-container">
-          <p>Your salry in Usd : {valueUsd}</p>
+          <p><ReactCountryFlag countryCode="US" svg style={{width:'2em'}}/> Your salary in Usd : {valueUsd} </p>
         </div>
         
        

@@ -9,9 +9,11 @@
     align-items: center;
     padding: 50px;
     text-align: center;
+    color:white;
     border: 2px solid black;
     border-radius: 20px;
     box-shadow: 3px 5px 3px 3px rgb(79, 73, 73);
+    background-color: rgb(12, 12, 103);
     
 }
 
@@ -40,7 +42,10 @@ select{
     height: 50px;
     color:white;
     background-color: rgb(1, 6, 142);
-    border: 1px solid black;
-    box-shadow: 2px 5px 2px rgb(183, 182, 182);
+    border: 2px dotted white;
+    border-radius: 20px;
+    /* box-shadow: 2px 5px 2px rgb(183, 182, 182); */
     text-align: left;
+    letter-spacing: 1.5px;
 }
+
