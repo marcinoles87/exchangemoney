@@ -24,21 +24,21 @@ function App() {
 
     if(cashSelected >= 4.5){
       console.log('eur')
-      setValuePln(salary * 4.32)  
-      setValueUsd(salary * 1.1010)
+      setValuePln((salary * 4.32).toFixed(2))  
+      setValueUsd((salary * 1.1010).toFixed(2))
     }
 
     if(cashSelected < 2){
       console.log('pln')
-      setValueEur(salary * 0.23)
-      setValueUsd(salary * 0.25)
+      setValueEur((salary * 0.23).toFixed(2))
+      setValueUsd((salary * 0.25).toFixed(2))
     }
 
     if(cashSelected >= 2 && cashSelected < 4){
       console.log('usd')
-      setValueEur( salary * 0.907)
-      setValuePln( salary * 3.93)
-      setValueUsd( salary)
+      setValueEur( (salary * 0.907).toFixed(2))
+      setValuePln( (salary * 3.93).toFixed(2))
+      setValueUsd( (salary *1).toFixed(2))
     }
 
     
@@ -74,7 +74,7 @@ function App() {
           <option value={4.5}>EUR</option>
           <option value={1}>PLN</option>
           <option value={3.9}>USD</option>
-          <option value={3.67}>GB</option>
+          
         </select>
       </div>
 

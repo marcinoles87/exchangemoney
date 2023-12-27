@@ -17,6 +17,10 @@
     
 }
 
+p{
+    font-size: 20px;
+}
+
 .change-container{
     display: flex;
     flex-direction: column;
