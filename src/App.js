@@ -82,15 +82,15 @@ function App() {
       <div className="change-container">
         <p>Your salary : {value}</p>
         <div className="money-container">
-          <p><ReactCountryFlag countryCode="PL" svg style={{width:'2em'}}/> Your salary in Pln : {valuePln} </p>
+          <p><ReactCountryFlag countryCode="PL" svg style={{width:'2em'}}/> Your salary in Pln : {valuePln} PLN</p>
         </div>
         
         <div className="money-container">
-          <p><ReactCountryFlag countryCode="EU" svg style={{width:'2em'}}/> Your salary in Eur : {valueEur} </p>
+          <p><ReactCountryFlag countryCode="EU" svg style={{width:'2em'}}/> Your salary in Eur : {valueEur} EUR</p>
         </div>
 
         <div className="money-container">
-          <p><ReactCountryFlag countryCode="US" svg style={{width:'2em'}}/> Your salary in Usd : {valueUsd} </p>
+          <p><ReactCountryFlag countryCode="US" svg style={{width:'2em'}}/> Your salary in Usd : {valueUsd} USD</p>
         </div>
         
        
