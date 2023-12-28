@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/exchangemoney/static/css/main.3c7565aa.css",
+    "main.js": "/exchangemoney/static/js/main.a8e9cabd.js",
+    "index.html": "/exchangemoney/index.html",
+    "main.3c7565aa.css.map": "/exchangemoney/static/css/main.3c7565aa.css.map",
+    "main.a8e9cabd.js.map": "/exchangemoney/static/js/main.a8e9cabd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c7565aa.css",
+    "static/js/main.a8e9cabd.js"
+  ]
+}
